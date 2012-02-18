@@ -1,4 +1,4 @@
 == Welcome to Lunchy
 
-This will be the source of an app that will keep track of the best places t
-o go for lunch.
+This will be the source of an app that will keep track of the best places to go for lunch.
+
