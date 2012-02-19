@@ -7,7 +7,9 @@ gem 'rails', '3.2.1'
 
 gem 'pg'
 
-
+gem 'rspec-core'
+gem 'rspec'
+gem 'rspec-rails',      ">= 2.0.0.beta"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
