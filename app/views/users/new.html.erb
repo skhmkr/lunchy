@@ -1,24 +1,28 @@
-<h1>Sign up</h1>
+<div class="page-haeder">
+<h1 class="normal">Sign up</h1>
+</div>
 
+<div class="well">
 <%= form_for(@user) do |f| %>
   <div class="field">
-    <%= f.label :name %><br />
-	<%= f.text_field :name %>
+    <%= f.label(:name, :class=>"form_labels") %><br />
+	<%= f.text_field(:name)  %>
   </div>
   <div class="field">
-	<%= f.label :email %><br />
+	<%= f.label(:email, :class=>"form_labels") %><br />
 	<%= f.text_field :email %>
   </div>
   <div class="field">
-	<%= f.label :password %><br />
+	<%= f.label(:password, :class=>"form_labels") %><br />
 	<%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation, "Confirmation" %><br />
+    <%= f.label(:password_confirmation, "Confirmation", :class=>"form_labels") %><br />
 	<%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit("Sign up", :class => "btn btn-primary btn-large") %>
   </div>
 <% end %>
+</div>
 	

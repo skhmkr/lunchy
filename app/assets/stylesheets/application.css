@@ -11,3 +11,24 @@
  *= require_self
  *= require_tree .
 */
+.well {
+  width:40%;
+  margin: 0px auto;
+}
+.new_user {
+  margin: 20px 0px 0px 70px;
+}
+
+.form_labels {
+  font-family:"Helvetica-light";
+  font-size:18px;
+}
+
+h1.normal { 
+  font-family:"Helvetica-light";
+  font-weight:normal;
+}
+
+form.login { 
+  margin: 5px 0px 0px 0px;
+}
