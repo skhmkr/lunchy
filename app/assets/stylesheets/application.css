@@ -27,6 +27,8 @@
 h1.normal { 
   font-family:"Helvetica-light";
   font-weight:normal;
+  width:40%;
+  margin: 10px auto;
 }
 
 form.login { 

@@ -32,6 +32,11 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  # GET /restaurants/search
+  def search
+    
+  end
+  
   # GET /restaurants/1/edit
   def edit
     @restaurant = Restaurant.find(params[:id])

@@ -19,5 +19,6 @@ $(document).ready(function() {
 	
   //ugly hack
   $(".btn").css( "margin-top", "0px" );
-
+  $("h1").css( "margin-top", "70px" );
+  $("h1").css( "margin-bottom", "15px" );
 });
