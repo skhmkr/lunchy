@@ -1,29 +1,29 @@
-<h1>Listing restaurants</h1>
+<h1 class="normal"> Restaurants in <%= @location.city %>,<%= @location.state %></h1>
+<div class = "row-fluid">
+	<div class="span2 resteraunt_search well">
+	  <h2>Search cuisine</h2>
+	  	<%= form_tag(restaurants_path, :html => { :class => "search-query"}) do |f| %> 
+		    <%= text_field_tag :search_cusine, @search, :size => 80 %>
+			<%= submit_tag "Go" %>		
+	    <% end %>
+		<div>
+		  <% @default_cusines.each do |cusine| %>
+            <%= link_to "#{cusine}", restaurants_path, :query => "#{cusine}"%>
+			<br/>
+          <% end %>
+		</div>
+	</div>
+	<div class="span4 resteraunt_results well">
+	  <% @businesses.each do |business| %>
+	    <p> <h3><%= business.name %></h3> </p>
+	    <p> <b><%= business.address %></strong> </p>
+	    <p> <b><%= business.city %>,<%= business.state %></strong> </p>
+	    <p> <b><%= business.avg_rating %> </b> stars from <b><%= business.review_count %></b> reviews 		     </p>
+        <p> <td><%= link_to 'Yelp Link', business.link %></td> </p>
+      <% end %>
+    </div>
+   	<div class="" id="map_canvas">
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Address</th>
-    <th>Link</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+	</div>
+</div>
 
-<% @restaurants.each do |restaurant| %>
-  <tr>
-    <td><%= restaurant.title %></td>
-    <td><%= restaurant.address %></td>
-    <td><%= restaurant.link %></td>
-    <td><%= restaurant.user_id %></td>
-    <td><%= link_to 'Show', restaurant %></td>
-    <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-    <td><%= link_to 'Destroy', restaurant, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Restaurant', new_restaurant_path %>

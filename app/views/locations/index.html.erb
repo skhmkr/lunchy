@@ -1,29 +1,18 @@
-<h1>Listing locations</h1>
+<h1 class="normal"> Welcome <%= @user.name %>!</h1>
 
-<table>
-  <tr>
-    <th>City</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th>State</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="well add_location">
+  <h2 class="normal"> Add a location</h2>
+  	<%= form_for("location", :html => { :class => "search-query"}) do |f| %> 
+	    <%= f.text_field(:city,:class => "search-query", :placeholder => "City, State") %>
+		<%= f.submit('Add', :class => "btn")%>
+    <% end %>
+</div>
 
-<% @locations.each do |location| %>
-  <tr>
-    <td><%= location.city %></td>
-    <td><%= location.latitude %></td>
-    <td><%= location.longitude %></td>
-    <td><%= location.state %></td>
-    <td><%= link_to 'Show', location %></td>
-    <td><%= link_to 'Edit', edit_location_path(location) %></td>
-    <td><%= link_to 'Destroy', location, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div class="well current_locations">
+  <h2 class="normal"> Your current locations</h2>
+  <% @user.locations.each do |location| %>
+    <%= link_to location.city, :controller => "restaurants", :action => "index", :location_id => location.id %>
+  <% end %>
+</div>
 
-<br />
 
-<%= link_to 'New Location', new_location_path %>

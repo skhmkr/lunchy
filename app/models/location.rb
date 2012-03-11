@@ -1,5 +1,4 @@
 class Location < ActiveRecord::Base
   has_many :restaurants
-
-  attr_accessor :city, :latitude, :longitude, :state
+  has_and_belongs_to_many :users
 end

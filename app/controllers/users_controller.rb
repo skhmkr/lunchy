@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     email = params[:user][:email]
     pass = params[:user][:password]
     @user = User.authenticate_safely(email, "password")
-    redirect_to "/users/#{@user.id}"   
+    session[:user_id] = @user.id
+    redirect_to "/locations"   
   end
   
   def show

@@ -11,9 +11,27 @@
  *= require_self
  *= require_tree .
 */
-.well {
+
+#search_cusine {
+  width: 120px;	
+}
+
+#map_canvas { 
+  height: 350px;
+  width: 400px;
+}
+
+.well.resteraunt_search {
+	margin-left: 25px;
+}
+.add_location {
   width:40%;
   margin: 0px auto;
+}
+
+.current_locations {
+  width:40%;
+  margin: 0px auto;	
 }
 .new_user {
   margin: 20px 0px 0px 70px;

@@ -14,11 +14,32 @@
 //= require jquery_ujs
 //= require_tree .
 
-
 $(document).ready(function() {
 	
   //ugly hack
   $(".btn").css( "margin-top", "0px" );
   $("h1").css( "margin-top", "70px" );
   $("h1").css( "margin-bottom", "15px" );
+
+  //MOVE THIS! this is bad design.
+  $('#map_canvas').gmap().bind('init', function(ev, map) {
+	$.getJSON("/restaurants.json?location_id=1", function(businesses) {
+		for (i=0;i<=businesses.length;i++)
+		{
+			if (businesses[i].lat != undefined && businesses[i].lon != undefined && businesses[i].name != undefined) {
+			var lat_long = businesses[i].lat + "," + businesses[i].lon;
+			var name = businesses[i].name;
+			console.log(name);
+			$('#map_canvas').gmap('addMarker', {'position': lat_long, 'bounds': true}).click(function() {
+			  for (i=0;i<=businesses.length;i++) {
+				var lat_long = businesses[i].lat + "," + businesses[i].lon;
+				$('#map_canvas').gmap('openInfoWindow', {'content':  name}, this);
+			  }
+			});
+		     }
+		}
+	});
+  });
+
+
 });

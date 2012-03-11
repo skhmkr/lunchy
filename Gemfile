@@ -6,7 +6,7 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-
+gem 'yelp'
 gem 'rspec-core'
 gem 'rspec'
 gem 'rspec-rails',      ">= 2.0.0.beta"
@@ -21,6 +21,8 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+gem 'oauth'
 
 gem 'jquery-rails'
 
